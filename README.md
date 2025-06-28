@@ -1,2 +1,2 @@
 # auth-api
-simple and universal auth api  ( ExprtssJS , MongoDB )
+simple and universal auth api  (ExpressJS, MongoDB )
