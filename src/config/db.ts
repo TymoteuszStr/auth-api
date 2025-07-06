@@ -1,6 +1,15 @@
 import mongoose from 'mongoose';
 
 export const connectDB = async () => {
-  await mongoose.connect(process.env.MONGODB_URI as string);
-  console.log('✅ MongoDB connected');
+  const uri = process.env.MONGODB_URI;
+
+  try {
+    await mongoose.connect(uri as string, {
+      serverSelectionTimeoutMS: 5_000,
+    });
+    console.log('✅ MongoDB connected');
+  } catch (err) {
+    console.error('❌ Mongo error:', err);
+    throw err;
+  }
 };
