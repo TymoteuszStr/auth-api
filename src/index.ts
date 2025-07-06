@@ -1,11 +1,9 @@
+import 'dotenv/config';
 import express from 'express';
 import { connectDB } from './config/db';
 import { authRouter } from './routes/auth.routes';
 import cors from 'cors';
 
-if (process.env.NODE_ENV !== 'production') {
-  import('dotenv/config');
-}
 const app = express();
 app.use(express.json());
 app.use(cors());

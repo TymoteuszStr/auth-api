@@ -1,6 +1,6 @@
 import { Schema, model, Document } from 'mongoose';
 import bcrypt from 'bcryptjs';
-import { UserCredentials } from '../interfaces/UserCredentials';
+import { UserCredentials } from '../interfaces/UserCredentials.js';
 
 export interface IUser extends UserCredentials, Document {
   comparePassword(plain: string): Promise<boolean>;
