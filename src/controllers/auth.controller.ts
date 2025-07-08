@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { User } from '../models/User.js';
-import { genToken } from '../utils/getToken.js';
+import { User } from '../models/User';
+import { genToken } from '../utils/getToken';
 
 export const register = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {

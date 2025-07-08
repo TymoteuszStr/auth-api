@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { register, login } from '../controllers/auth.controller.js';
-import { registerSchema } from '../schemas/auth.schema.js';
-import { validate } from '../middlewares/validate.middleware.js';
+import { register, login } from '../controllers/auth.controller';
+import { validate } from '../middlewares/validate.middleware';
+import { registerSchema } from '../schemas/register.schema';
+import { loginSchema } from '../schemas/login.schema';
 
 export const authRouter = Router();
 authRouter.post('/register', validate(registerSchema), register);
-authRouter.post('/login', validate(registerSchema), login);
+authRouter.post('/login', validate(loginSchema), login);
